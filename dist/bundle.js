@@ -94,11 +94,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _add_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 
 
-
-const helloworldButton = new _components_helloworld_heloworld__WEBPACK_IMPORTED_MODULE_0__["default"]();
-helloworldButton.render();
-//addImage();
-
+var helloworldButton = new _components_helloworld_heloworld__WEBPACK_IMPORTED_MODULE_0__["default"]();
+helloworldButton.render(); //addImage();
 
 /***/ }),
 /* 1 */
@@ -106,27 +103,46 @@ helloworldButton.render();
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hello_world_button_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _hello_world_button_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hello_world_button_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _hello_world_button_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _hello_world_button_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hello_world_button_scss__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
-class Helloworld {
-  render() {
-    const button = document.createElement("button");
-    button.innerHTML = "hello world";
-    button.classList.add("hello-world-button");
-    button.onclick = function () {
-      const p = document.createElement("p");
-      p.innerHTML = "Hello world";
-      p.classList.add("hello-world-text");
-      body.appendChild(p);
-    };
-    const body = document.querySelector("body");
-    body.appendChild(button);
+
+var Helloworld = /*#__PURE__*/function () {
+  function Helloworld() {
+    _classCallCheck(this, Helloworld);
+
+    this.buttonCssClass = "hello-world-text";
   }
-}
-/* harmony default export */ __webpack_exports__["default"] = (Helloworld);
 
+  _createClass(Helloworld, [{
+    key: "render",
+    value: function render() {
+      var button = document.createElement("button");
+      button.innerHTML = "hello world";
+      button.classList.add("hello-world-button");
+
+      button.onclick = function () {
+        var p = document.createElement("p");
+        p.innerHTML = "Hello world";
+        p.classList.add(this.buttonCssClass);
+        body.appendChild(p);
+      };
+
+      var body = document.querySelector("body");
+      body.appendChild(button);
+    }
+  }]);
+
+  return Helloworld;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Helloworld);
 
 /***/ }),
 /* 2 */
@@ -439,7 +455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".hello-world-button {\r\n  font-size: 20px;\r\n  padding: 10px;\r\n  color: white;\r\n  outline: none;\r\n}\r\n\r\n.hello-world-text {\r\n  color: greenyellow;\r\n  font-weight: bold;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".hello-world-button {\n  font-size: 20px;\n  padding: 10px;\n  color: white;\n  outline: none;\n  background-color: green; }\n\n.hello-world-text {\n  color: greenyellow;\n  font-weight: bold; }\n", ""]);
 // Exports
 /* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
@@ -450,13 +466,13 @@ ___CSS_LOADER_EXPORT___.push([module.i, ".hello-world-button {\r\n  font-size: 2
 
 "use strict";
 
-
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
 // eslint-disable-next-line func-names
+
 module.exports = function (useSourceMap) {
   var list = []; // return the list of modules as css string
 
@@ -554,16 +570,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function addImage() {
-  const img = document.createElement("img");
+  var img = document.createElement("img");
   img.alt = "certificate";
   img.width = 300;
   img.src = _RestApi_jpg__WEBPACK_IMPORTED_MODULE_0__["default"];
-  const body = document.querySelector("body");
+  var body = document.querySelector("body");
   body.appendChild(img);
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (addImage);
-
 
 /***/ }),
 /* 7 */
